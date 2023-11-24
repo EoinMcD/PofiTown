@@ -8,12 +8,14 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] Transform castPoint;
 
     PlayerCam playerCam;
+    PlayerInventory playerInventory;
 
     bool canInteract=false;
     I_Interactable interactable;
 
     private void Start() {
         playerCam=GetComponent<PlayerCam>();
+        playerInventory=GetComponent<PlayerInventory>();
     }
 
     private void Update() {
@@ -24,6 +26,10 @@ public class PlayerInteract : MonoBehaviour
         }
         
     } 
+
+    public PlayerInventory GetPlayerInventory(){
+        return playerInventory;
+    }
 
     private void OnTriggerEnter(Collider other) {
         other.gameObject.TryGetComponent<I_Interactable>(out I_Interactable interactable);

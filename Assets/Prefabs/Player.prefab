@@ -200,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1816534088644472996}
   - component: {fileID: 8922145843319307264}
+  - component: {fileID: 7322095027237783151}
   - component: {fileID: 5604430263427328301}
   - component: {fileID: 8759122902363828882}
   - component: {fileID: 5270100759737397552}
@@ -256,6 +257,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &7322095027237783151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143151735023176215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173681cea603d394495081c8410f7744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySize: 16
 --- !u!114 &5604430263427328301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactKey: 101
-  rayCastLength: 2
   castPoint: {fileID: 570539165720633137}
 --- !u!114 &5270100759737397552
 MonoBehaviour:
