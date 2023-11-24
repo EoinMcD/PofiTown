@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Flower
   itemIcon: {fileID: 21300000, guid: 2ef657bdf4abfe84ea7adf1418cdae68, type: 3}
   itemPrefab: {fileID: 5278098477995441862, guid: 14bebfb78834a164ebbcd632da12e892, type: 3}
-  itemType: 0
-  inventoryMax: 50
+  itemType: 2
+  inventoryMax: 2
