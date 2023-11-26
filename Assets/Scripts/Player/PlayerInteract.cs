@@ -7,15 +7,16 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] KeyCode interactKey = KeyCode.E;
     [SerializeField] Transform castPoint;
 
+    [SerializeField] GameObject mainInvTemp;
+
     PlayerCam playerCam;
-    PlayerInventory playerInventory;
 
     bool canInteract=false;
     I_Interactable interactable;
 
     private void Start() {
         playerCam=GetComponent<PlayerCam>();
-        playerInventory=GetComponent<PlayerInventory>();
+        mainInvTemp.SetActive(false);
     }
 
     private void Update() {
@@ -24,12 +25,12 @@ public class PlayerInteract : MonoBehaviour
                 interactable.Interact(this);
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.Tab)){
+            mainInvTemp.SetActive(!mainInvTemp.activeInHierarchy);
+        }
         
     } 
-
-    public PlayerInventory GetPlayerInventory(){
-        return playerInventory;
-    }
 
     private void OnTriggerEnter(Collider other) {
         other.gameObject.TryGetComponent<I_Interactable>(out I_Interactable interactable);
