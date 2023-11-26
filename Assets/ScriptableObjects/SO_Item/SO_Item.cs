@@ -2,28 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType{
-        Weapon,
-        Clothes,
-        Ingrediant,
-        Other
+[CreateAssetMenu(menuName ="ScriptableObjects/Item")]
+
+
+
+public class SO_Item : ScriptableObject {
+    
+    [Header("Gameplay")]
+    [SerializeField] public ItemType itemType;
+    [SerializeField] public float range;
+    [SerializeField] public bool useItem;
+
+    [SerializeField] public GameObject itemPrefab;
+
+
+    [Header("UI")]
+    [SerializeField] public Sprite itemIcon;
+    [SerializeField] public bool stackable = true;
+    [SerializeField] public int stackSize;
+
+
+
+
 }
 
-[CreateAssetMenu(fileName = "SO_Item", menuName = "PofiPofiPofi/SO_Item", order = 0)]
-public class SO_Item : ScriptableObject{
-    [SerializeField] string id;
-    [SerializeField] string itemName;
-    [SerializeField] Sprite itemIcon;
-    [SerializeField] GameObject itemPrefab;
-    [SerializeField] ItemType itemType;
-    [SerializeField] int inventoryMax;
-
-    public GameObject ItemPrefab { get => itemPrefab; }
-    public string ItemName { get => itemName;}
-    public Sprite ItemIcon { get => itemIcon; }
-    public ItemType ItemType { get => itemType; }
-    public int InventoryMax { get => inventoryMax; }
 
 
-    
+public enum ItemType {
+    Weapon,
+    Clothing,
+    Tool,
+    Edible,
+    Ingrediant,
+    Other
 }
