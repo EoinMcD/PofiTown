@@ -25,6 +25,7 @@ public class InventoryItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public void OnBeginDrag(PointerEventData eventData)
     {
         image.raycastTarget=false;
+        countText.raycastTarget = false;
         Debug.Log("being drag");
         parentAfterDrag=transform.parent;
         transform.SetParent(transform.root);
@@ -46,6 +47,7 @@ public class InventoryItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public void OnEndDrag(PointerEventData eventData)
     {
         image.raycastTarget=true;
+        countText.raycastTarget = true;
         Debug.Log("End drag");
         transform.SetParent(parentAfterDrag);
     }
