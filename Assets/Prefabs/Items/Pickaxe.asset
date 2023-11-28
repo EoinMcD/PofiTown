@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 2
   range: 3
   useItem: 0
-  itemPrefab: {fileID: 6964348669877768934, guid: 14bebfb78834a164ebbcd632da12e892, type: 3}
+  itemPrefab: {fileID: 1140470520234883133, guid: 193af9011ff733f468e0f620165dfe42, type: 3}
   itemIcon: {fileID: 21300000, guid: 4683e64797a364ad1adde74cc69b1ec9, type: 3}
   stackable: 0
   stackSize: 0

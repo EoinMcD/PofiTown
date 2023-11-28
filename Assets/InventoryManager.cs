@@ -6,7 +6,7 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] InventorySlot[] inventorySlots;
     [SerializeField] GameObject inventoryItemPrefab;
-
+    [SerializeField] PlayerItem playerItem;
     int selectedSlot= -1;
 
 
@@ -21,6 +21,25 @@ public class InventoryManager : MonoBehaviour
                 ChangeSelectedSlot(number-1);
             }
         }
+        if(Input.GetMouseButtonDown(0)){
+            InventoryItemUI invItem=GetSlotInfo();
+            if(invItem!=null){
+                UseItemInHand(invItem.so_Item,invItem);
+            }
+            
+        }
+    }
+
+    InventoryItemUI GetSlotInfo(){
+        InventorySlot slot = inventorySlots[selectedSlot];
+        InventoryItemUI itemInSlot = slot.GetComponentInChildren<InventoryItemUI>();
+
+        if(itemInSlot!=null) {
+            return itemInSlot;
+        }
+        else{
+            return null;
+        }
     }
 
     void ChangeSelectedSlot(int newValue){
@@ -29,6 +48,11 @@ public class InventoryManager : MonoBehaviour
         }
         inventorySlots[newValue].Select();
         selectedSlot=newValue;
+        InventoryItemUI itemInSlot=inventorySlots[newValue].GetComponentInChildren<InventoryItemUI>();
+        if(itemInSlot!=null) {
+            playerItem.SpawnItem(itemInSlot.so_Item);
+        }
+        
     }
 
     public bool AddItem(SO_Item item) {
@@ -67,21 +91,28 @@ public class InventoryManager : MonoBehaviour
         InventorySlot slot = inventorySlots[selectedSlot];
           InventoryItemUI itemInSlot = slot.GetComponentInChildren<InventoryItemUI>();
             if(itemInSlot!= null) {
-                SO_Item item = itemInSlot.so_Item;
-                if(item.useItem){
-                    itemInSlot.count--;
-                    if(itemInSlot.count<=0){
-                        Destroy(itemInSlot.gameObject);
-                    }
-                    else{
-                        itemInSlot.RefreshCount();
-                    }
-                }
-
-                return item;
+                return itemInSlot.so_Item;
             }
             else{
                 return null;
             }
+    }
+
+    void UseItemInHand(SO_Item itemSO,InventoryItemUI itemInSlot){
+        Item item =GetSelectedItem().GetItem();
+        if(itemSO.useItem){
+            Debug.Log("BEFORE COUNTDOWN: " +itemInSlot.count);
+            itemInSlot.count--;
+            Debug.Log("AFTER COUNTDOWN: " +itemInSlot.count);
+            if(itemInSlot.count<=0){
+                Destroy(itemInSlot.gameObject);
+            }
+            else{
+                itemInSlot.RefreshCount();
+            }
+        }
+        item.UseItem();
+        
+        
     }
 }

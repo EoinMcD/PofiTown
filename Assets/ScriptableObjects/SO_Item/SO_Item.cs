@@ -21,6 +21,10 @@ public class SO_Item : ScriptableObject {
     [SerializeField] public bool stackable = true;
     [SerializeField] public int stackSize;
 
+    public Item GetItem(){
+        return itemPrefab.GetComponent<Item>();
+    }
+
 
 
 
