@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 526587696767000670}
   - component: {fileID: 4742957142541770018}
   - component: {fileID: 2531107420390435171}
-  - component: {fileID: 849048849203659448}
   m_Layer: 0
   m_Name: LFoot
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 397586172447842556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.271, y: -0.901, z: 0.18}
+  m_LocalPosition: {x: -0.271, y: -0.925, z: 0.18}
   m_LocalScale: {x: 0.41045845, y: 0.078505, z: 0.5194006}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,29 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &849048849203659448
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397586172447842556}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &438351726657203793
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +432,6 @@ GameObject:
   - component: {fileID: 5240633975936131326}
   - component: {fileID: 7238456596372498545}
   - component: {fileID: 9203678613690209334}
-  - component: {fileID: 6819353532789198957}
   m_Layer: 0
   m_Name: RFoot
   m_TagString: Untagged
@@ -473,7 +448,7 @@ Transform:
   m_GameObject: {fileID: 3986477743331904679}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.271, y: -0.901, z: 0.18}
+  m_LocalPosition: {x: 0.271, y: -0.925, z: 0.18}
   m_LocalScale: {x: 0.41045845, y: 0.078505, z: 0.5194006}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -529,29 +504,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6819353532789198957
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3986477743331904679}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4227714410653303988
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +753,6 @@ GameObject:
   - component: {fileID: 5604430263427328301}
   - component: {fileID: 8759122902363828882}
   - component: {fileID: 5270100759737397552}
-  - component: {fileID: 1014751260722793303}
   - component: {fileID: 3212126184605035635}
   - component: {fileID: 2170235889916433779}
   m_Layer: 0
@@ -908,27 +859,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamPrefab: {fileID: 1004285324032925914, guid: 98eab64db5e14694f903b596224c0197, type: 3}
---- !u!65 &1014751260722793303
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7143151735023176215}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.7, y: 0.1, z: 0.7}
-  m_Center: {x: 0, y: -0.94, z: 0}
 --- !u!114 &3212126184605035635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,7 +892,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7638766866796488609

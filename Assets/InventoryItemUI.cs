@@ -28,6 +28,7 @@ public class InventoryItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         countText.raycastTarget = false;
         Debug.Log("being drag");
         parentAfterDrag=transform.parent;
+        Debug.Log(transform.root.gameObject.name);
         transform.SetParent(transform.root);
         
     }

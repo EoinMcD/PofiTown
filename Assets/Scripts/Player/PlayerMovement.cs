@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     float verticalInput;
     Vector3 moveDir;
+    float horizRot;
+    float vertRot;
 
     bool canInput = true;
 
@@ -51,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate() {
         MovePlayer();
+        RotatePlayer();
     }
 
      void MyInput() {
@@ -62,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
         if(!canInput) {return;}
         moveDir = orientation.forward * verticalInput + orientation.right * horizontalInput;
         if(OnSlope() && !exitingSlope) {
+            Debug.Log("on slope");
             rb.AddForce(GetSlopeMoveDirection(moveDir) * speed  , ForceMode.Force);
 
             if(rb.velocity.y > 0) {
@@ -70,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
         else if(grounded) {
+            transform.rotation=Quaternion.Euler(horizontalInput,0,verticalInput);
             rb.AddForce(moveDir.normalized * speed , ForceMode.Force);
             
         } 
@@ -79,6 +84,15 @@ public class PlayerMovement : MonoBehaviour
 
         UseGravity(!OnSlope());
     }
+
+    void RotatePlayer(){
+        horizRot -= Input.GetAxis("Horizontal") * speed;
+	    vertRot += Input.GetAxis("Vertical") * speed;
+	    Quaternion fromRotation = transform.rotation;
+	    Quaternion toRotation = Quaternion.Euler(vertRot, horizRot, 0);
+	    transform.rotation = Quaternion.Lerp(fromRotation, toRotation, Time.deltaTime );
+    }
+
 
     void SpeedControl() {
         if(OnSlope() && !exitingSlope && minimiseVelocity) {
