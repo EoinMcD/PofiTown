@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed=5f;
     [SerializeField] Transform orientation;
     [SerializeField] Transform[] groundChecks;
+    [SerializeField] Transform mesh;
     Rigidbody rb;
     [Space]
 
@@ -49,11 +50,12 @@ public class PlayerMovement : MonoBehaviour
         if(useGravity){
             DoGravity();
         }
+        RotatePlayer();
     }
 
     private void FixedUpdate() {
         MovePlayer();
-        RotatePlayer();
+        
     }
 
      void MyInput() {
@@ -74,23 +76,41 @@ public class PlayerMovement : MonoBehaviour
         }
         
         else if(grounded) {
-            transform.rotation=Quaternion.Euler(horizontalInput,0,verticalInput);
+            //transform.rotation=Quaternion.Euler(horizontalInput,0,verticalInput );
             rb.AddForce(moveDir.normalized * speed , ForceMode.Force);
             
         } 
-       // else if(!grounded) {
-        //    rb.AddForce(moveDir.normalized * speed  * airMultiplier*10, ForceMode.Force);
-        //}
 
         UseGravity(!OnSlope());
     }
 
     void RotatePlayer(){
-        horizRot -= Input.GetAxis("Horizontal") * speed;
-	    vertRot += Input.GetAxis("Vertical") * speed;
-	    Quaternion fromRotation = transform.rotation;
-	    Quaternion toRotation = Quaternion.Euler(vertRot, horizRot, 0);
-	    transform.rotation = Quaternion.Lerp(fromRotation, toRotation, Time.deltaTime );
+        if (horizontalInput != 0 && verticalInput != 0) {
+            float yRotation = 0;
+            if (horizontalInput > 0 && verticalInput > 0) {
+                yRotation = 45; // Right and Up
+            }
+            else if (horizontalInput > 0 && verticalInput < 0) {
+                yRotation = 135; // Right and Down
+            }
+            else if (horizontalInput < 0 && verticalInput > 0) {
+                yRotation = -45; // Left and Up
+            }
+            else if (horizontalInput < 0 && verticalInput < 0) {
+                yRotation = -135; // Left and Down
+            }
+            mesh.localRotation = Quaternion.Euler(0, yRotation, 0);
+        }
+        else if (horizontalInput != 0) {
+            mesh.localRotation = Quaternion.Euler(0, horizontalInput * 90, 0);
+        }
+        else if (verticalInput > 0) {
+            mesh.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (verticalInput != 0) {
+            mesh.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+
     }
 
 

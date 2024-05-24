@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 1800313260971055872}
   - component: {fileID: 8653586176801552882}
   - component: {fileID: 3655428683410849417}
-  - component: {fileID: 8439208931263091639}
   m_Layer: 0
   m_Name: RHand (1)
   m_TagString: Untagged
@@ -167,29 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8439208931263091639
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 438351726657203793}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &797667240709865371
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +208,6 @@ GameObject:
   - component: {fileID: 7458853971646874841}
   - component: {fileID: 5171650755506892737}
   - component: {fileID: 6251836950789069400}
-  - component: {fileID: 3026318709116692045}
   m_Layer: 0
   m_Name: Belly
   m_TagString: Untagged
@@ -305,29 +280,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3026318709116692045
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819352115241105208}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2877741496446505529
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +502,6 @@ GameObject:
   - component: {fileID: 8470085899502218274}
   - component: {fileID: 6842426765505548965}
   - component: {fileID: 6657626859572690184}
-  - component: {fileID: 2024461081917079036}
   m_Layer: 0
   m_Name: Beak
   m_TagString: Untagged
@@ -623,29 +574,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2024461081917079036
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4487009361863679670}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4607976337182150334
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,9 +734,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &5604430263427328301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,6 +756,7 @@ MonoBehaviour:
   - {fileID: 4809817989730124836}
   - {fileID: 4013958254285981685}
   - {fileID: 8590086258883749324}
+  mesh: {fileID: 130001023679382807}
   playerHeight: 2
   grounded: 0
   maxSlopeAngle: 40
@@ -906,7 +835,6 @@ GameObject:
   - component: {fileID: 1345738178712401769}
   - component: {fileID: 3341699390854980390}
   - component: {fileID: 7527366744263219316}
-  - component: {fileID: 4279629200295759244}
   m_Layer: 0
   m_Name: Eye2
   m_TagString: Untagged
@@ -979,27 +907,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4279629200295759244
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7638766866796488609}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7928008659423487430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +918,6 @@ GameObject:
   - component: {fileID: 210402205651905352}
   - component: {fileID: 3899474496327381556}
   - component: {fileID: 4433239621090272865}
-  - component: {fileID: 2934334827208070795}
   m_Layer: 0
   m_Name: RHand
   m_TagString: Untagged
@@ -1084,29 +990,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2934334827208070795
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7928008659423487430}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8502683897294605475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1001,6 @@ GameObject:
   - component: {fileID: 8784145878993545427}
   - component: {fileID: 9053993975774919758}
   - component: {fileID: 4738970298245727547}
-  - component: {fileID: 37807135698872433}
   m_Layer: 0
   m_Name: Eye1
   m_TagString: Untagged
@@ -1191,27 +1073,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &37807135698872433
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8502683897294605475}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8993073428328726087
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,12 @@ public class PlayerCam : MonoBehaviour
     CameraScript cams;
 
     CinemachineVirtualCamera mainCam;
+    GameObject playerCam;
 
     private void Start() {
-        cams=playerCamPrefab.GetComponent<CameraScript>();
+        playerCam = Instantiate(playerCamPrefab);
+        cams = playerCam.GetComponent<CameraScript>();
         mainCam=cams.GetMainCam();
-        Instantiate(playerCamPrefab);
         mainCam.Priority=100;
         mainCam.m_Follow=this.gameObject.transform;
     }
