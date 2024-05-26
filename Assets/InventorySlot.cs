@@ -9,6 +9,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     [SerializeField] public Image image;
     [SerializeField] public Color selectedColor, notSelectedColor;
 
+    [SerializeField] GameObject inventoryItemPrefab;
+
+    SO_Item itemInSlot;
+
     private void Awake() {
         DeSelect();
     }
@@ -18,7 +22,9 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         if(transform.childCount ==0) {
             InventoryItemUI inventoryItemUI =eventData.pointerDrag.GetComponent<InventoryItemUI>();
             Debug.Log(inventoryItemUI);
+            inventoryItemUI.parentAfterDrag.GetComponent<InventorySlot>().ResetItem();
             inventoryItemUI.parentAfterDrag=transform;
+            itemInSlot = inventoryItemUI.so_Item;
         }
     }
 
@@ -29,4 +35,23 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     public void DeSelect(){
         image.color=notSelectedColor;
     }    
+
+    public void ResetItem() {
+        itemInSlot = null;
+    }
+
+    public SO_Item GetItemInSlot() {
+        return itemInSlot;
+    }
+
+    public void AddItemInSlot(SO_Item item) {
+        itemInSlot = item ;
+    }
+
+    public void AddItem(SO_Item item) {
+        GameObject newItemGo = Instantiate(inventoryItemPrefab, transform);
+        InventoryItemUI inventoryItemUI = newItemGo.GetComponent<InventoryItemUI>();
+        inventoryItemUI.InitialiseItem(item);
+        AddItemInSlot(item);
+    }
 }

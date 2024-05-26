@@ -116,3 +116,4 @@ MonoBehaviour:
   image: {fileID: 4644709881404184409}
   selectedColor: {r: 0.53123885, g: 0.8867924, b: 0.85344875, a: 1}
   notSelectedColor: {r: 0.92549026, g: 0.89019614, b: 0.8078432, a: 1}
+  inventoryItemPrefab: {fileID: 3694788084094792193, guid: dc38a2ae247fdb44bbea04e548babc6b, type: 3}

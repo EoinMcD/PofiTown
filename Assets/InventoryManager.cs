@@ -74,6 +74,7 @@ public class InventoryManager : MonoBehaviour
             InventoryItemUI itemInSlot = slot.GetComponentInChildren<InventoryItemUI>();
             if(itemInSlot== null) {
                 SpawnNewItem(item, slot);
+                
                 return true;
             }
 
@@ -85,6 +86,7 @@ public class InventoryManager : MonoBehaviour
         GameObject newItemGo=Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItemUI inventoryItemUI = newItemGo.GetComponent<InventoryItemUI>();
         inventoryItemUI.InitialiseItem(item);
+        slot.AddItemInSlot(item);
     }
 
     public SO_Item GetSelectedItem() {
@@ -110,8 +112,9 @@ public class InventoryManager : MonoBehaviour
             else{
                 itemInSlot.RefreshCount();
             }
+            item.UseItem();
         }
-        item.UseItem();
+        
         
         
     }
