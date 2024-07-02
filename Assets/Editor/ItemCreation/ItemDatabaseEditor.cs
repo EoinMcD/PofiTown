@@ -5,8 +5,8 @@ using System.IO;
 
 public class ItemCreatorEditor : EditorWindow {
     private string newItemName = "New Item";
-    private SO_Item selectedItemData;
-    private GameObject selectedItem;
+    public SO_Item selectedItemData;
+    public GameObject selectedItem;
     private GameObject createdPrefab;
 
     [MenuItem("Tools/Item Creator")]
@@ -117,3 +117,5 @@ public class ItemCreatorEditor : EditorWindow {
     }
 
 }
+
+
