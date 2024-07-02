@@ -24,10 +24,21 @@ public class ItemCreatorEditor : EditorWindow {
         }
 
         GUILayout.Space(20);
-        GUILayout.Label("Edit Selected Item", EditorStyles.boldLabel);
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        var style = new GUIStyle(EditorStyles.label) { fontStyle=FontStyle.Bold, fontSize=15 };
+        GUILayout.Label("Edit Selected Item", style);
+        GUILayout.FlexibleSpace();
+        EditorGUILayout.EndHorizontal();
+        GUILayout.Space(20);
 
-        selectedItem = (GameObject)EditorGUILayout.ObjectField("Item GameObject", selectedItem, typeof(GameObject), true);
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.Space(20);
 
+        selectedItem = (GameObject)EditorGUILayout.ObjectField("Item", selectedItem, typeof(GameObject), true);
+        
+        GUILayout.Space(20);
+        EditorGUILayout.EndHorizontal();
         if (selectedItem != null) {
             Item itemComponent = selectedItem.GetComponent<Item>();
             if (itemComponent != null) {
@@ -47,7 +58,12 @@ public class ItemCreatorEditor : EditorWindow {
         }
 
         GUILayout.Space(20);
-        GUILayout.Label("Edit Created Prefab", EditorStyles.boldLabel);
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        GUILayout.Label("Edit Created Prefab", style);
+        GUILayout.FlexibleSpace();
+        EditorGUILayout.EndHorizontal();
+        GUILayout.Space(20);
 
         if (selectedItem != null) {
             Item prefabItemComponent = selectedItem.GetComponent<Item>();
@@ -96,10 +112,15 @@ public class ItemCreatorEditor : EditorWindow {
         SerializedObject serializedItemData = new SerializedObject(itemData);
         SerializedProperty property = serializedItemData.GetIterator();
         property.NextVisible(true);
-
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.Space(20);
+        GUILayout.BeginVertical();
         while (property.NextVisible(false)) {
             EditorGUILayout.PropertyField(property, true);
         }
+        GUILayout.EndVertical();
+        GUILayout.Space(20);
+        EditorGUILayout.EndHorizontal();
 
         serializedItemData.ApplyModifiedProperties();
     }
@@ -108,10 +129,15 @@ public class ItemCreatorEditor : EditorWindow {
         SerializedObject serializedItemData = new SerializedObject(itemData);
         SerializedProperty property = serializedItemData.GetIterator();
         property.NextVisible(true);
-
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.Space(20);
+        GUILayout.BeginVertical();
         while (property.NextVisible(false)) {
             EditorGUILayout.PropertyField(property, true);
         }
+        GUILayout.EndVertical();
+        GUILayout.Space(20);
+        EditorGUILayout.EndHorizontal();
 
         serializedItemData.ApplyModifiedProperties();
     }

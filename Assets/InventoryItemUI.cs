@@ -64,14 +64,38 @@ public class InventoryItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public void OnPointerClick(PointerEventData eventData) {
         if (eventData.button == 0 && Input.GetKey(KeyCode.LeftShift)) {
             Debug.Log("CLICK " + currentlyIn.ToString());
-            FindTopSpot();
+            FindTopSpot().ShiftClick(currentlyIn, this);
         }
+
+        if (eventData.button == 0 && Input.GetKey(KeyCode.LeftControl)) {
+            Debug.Log("REMOVE " + currentlyIn.ToString());
+            VirtualInventory inv = transform.root.gameObject.GetComponentInChildren<VirtualInventory>();
+            inv.RemoveItem(this);
+        }
+
+        //if (eventdata.button == pointereventdata.inputbutton.right) {
+        //    int tempcount;
+        //    if (count % 2 == 0) {
+        //        count /= 2;
+        //    }
+        //    else {
+        //        tempcount = count / 2;
+        //        count = count / 2 + count % 2;
+        //        debug.log("das " + tempcount + "    -   " + count);
+        //    }
+
+        //    inventoryitemui newitem = instantiate(gameobject).getcomponent<inventoryitemui>();
+        //    findtopspot().addtoinventory(newitem.so_item, )
+
+
+
+        //}
     }
 
 
-    public void FindTopSpot() {
-        VirtualInventory inv = transform.root.gameObject.GetComponentInChildren<VirtualInventory>();
-        inv.ShiftClick(currentlyIn, this);
+    public VirtualInventory FindTopSpot() {
+        return transform.root.gameObject.GetComponentInChildren<VirtualInventory>();
+        
     }
 
     private void GetInventoryType() {
