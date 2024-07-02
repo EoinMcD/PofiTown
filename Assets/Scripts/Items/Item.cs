@@ -10,4 +10,12 @@ public class Item : MonoBehaviour
     public void UseItem(){
         itemAbility.UseItem();
     }
+
+    public SO_Item GetSO() {
+        return so_Item;
+    }
+
+    public void SetSO(SO_Item so) {
+        so_Item = so;
+    }
 }
