@@ -15,4 +15,4 @@ MonoBehaviour:
   ingrediant1: {fileID: 11400000, guid: 31d3f1272182eab448f51ca737139447, type: 2}
   ingrediant2: {fileID: 0}
   ingrediant3: {fileID: 0}
-  result: {fileID: 11400000, guid: 6446f271401f4d74b86323b023d5c53b, type: 2}
+  result: {fileID: 11400000, guid: 91701da24cf806e4188d59570d80171f, type: 2}
