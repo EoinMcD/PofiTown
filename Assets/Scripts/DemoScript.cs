@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DemoScript : MonoBehaviour
 {
-    [SerializeField] InventoryManager invManager;
+    [SerializeField] PlayerInventory invManager;
     
     public SO_Item[] itemsToPickup;
 
